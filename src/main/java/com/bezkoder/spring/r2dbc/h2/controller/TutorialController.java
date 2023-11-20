@@ -1,4 +1,4 @@
-package com.bezkoder.spring.r2dbc.h2.controller;
+/*package com.bezkoder.spring.r2dbc.h2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,6 +33,7 @@ public class TutorialController {
     else
       return tutorialService.findByTitleContaining(title);
   } */
+   /* 
 
   @GetMapping("/tutorials/{id}")
   @ResponseStatus(HttpStatus.OK)
@@ -70,5 +71,6 @@ public class TutorialController {
   public List<Tutorial> findByPublished() {
     return tutorialService.findByPublished(true);
   }
-   */
+   
 }
+*/

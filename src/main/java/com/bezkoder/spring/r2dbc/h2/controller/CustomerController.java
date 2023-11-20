@@ -1,5 +1,7 @@
 package com.bezkoder.spring.r2dbc.h2.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,21 +20,20 @@ import com.bezkoder.spring.r2dbc.h2.model.Customer;
 import com.bezkoder.spring.r2dbc.h2.service.CustomerService;
 
 
-@CrossOrigin(origins = "http://localhost:8005")
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/DoctorPizza")
 public class CustomerController {
   @Autowired
   CustomerService customerService;
   
-  /*@GetMapping("/tutorials")
+  @GetMapping("/customers")
   @ResponseStatus(HttpStatus.OK)
-  public List<Tutorial> getAllTutorials(@RequestParam(required = false) String title) {
-    if (title == null)
-      return tutorialService.findAll();
-    else
-      return tutorialService.findByTitleContaining(title);
-  }*/
+  public List<Customer> getAllCustomers() {
+   
+      return customerService.findAll();
+  
+  }
 
   @GetMapping("/customers/{id}")
   @ResponseStatus(HttpStatus.OK)

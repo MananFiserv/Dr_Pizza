@@ -1,4 +1,4 @@
-package com.bezkoder.spring.r2dbc.h2.model;
+/*package com.bezkoder.spring.r2dbc.h2.model;
 
 import jakarta.persistence.*;
 
@@ -69,3 +69,4 @@ public class Tutorial {
     this.city = city;
   }
 }
+*/
