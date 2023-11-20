@@ -1,4 +1,4 @@
-package com.bezkoder.spring.r2dbc.h2.repository;
+/*package com.bezkoder.spring.r2dbc.h2.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -19,3 +19,5 @@ public interface TutorialRepository extends JpaRepository<Tutorial, Integer> {
 
 
 }
+
+*/
