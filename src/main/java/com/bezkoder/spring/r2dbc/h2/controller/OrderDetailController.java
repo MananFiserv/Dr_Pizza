@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bezkoder.spring.r2dbc.h2.model.Tutorial;
-import com.bezkoder.spring.r2dbc.h2.service.TutorialService;
+import com.bezkoder.spring.r2dbc.h2.model.OrderDetail;
+import com.bezkoder.spring.r2dbc.h2.service.OrderDetailService;
 
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:8005")
 @RestController
-@RequestMapping("/api")
-public class TutorialController {
+@RequestMapping("/DoctorPizza")
+public class OrderDetailController {
   @Autowired
-  TutorialService tutorialService;
+  OrderDetailService orderDetailService;
   
   /*@GetMapping("/tutorials")
   @ResponseStatus(HttpStatus.OK)
@@ -32,38 +32,39 @@ public class TutorialController {
       return tutorialService.findAll();
     else
       return tutorialService.findByTitleContaining(title);
-  } */
+  }*/
 
-  @GetMapping("/tutorials/{id}")
+  @GetMapping("/order_detail/{id}")
   @ResponseStatus(HttpStatus.OK)
-  public Tutorial getTutorialById(@PathVariable("id") int id) {
-    return tutorialService.findById(id);
+  public OrderDetail getOrderDetailById(@PathVariable("id") int id) {
+    return orderDetailService.findById(id);
   }
 
-  @PostMapping("/tutorials")
-  //@ResponseStatus(HttpStatus.CREATED)
-  public Tutorial createTutorial(@RequestBody Tutorial tutorial) {
-    System.out.println("Made it here 1");
-    return tutorialService.save(tutorial);
+  @PostMapping("/order_detail")
+  @ResponseStatus(HttpStatus.CREATED)
+  public OrderDetail createOrderDetail(@RequestBody OrderDetail orderDetail) {
+    return orderDetailService.save(orderDetail);
   }
 
-  @PutMapping("/tutorials/{id}")
+  @PutMapping("/order_detail/{id}")
   @ResponseStatus(HttpStatus.OK)
-  public Tutorial updateTutorial(@PathVariable("id") int id, @RequestBody Tutorial tutorial) {
-    return tutorialService.update(id, tutorial);
+  public OrderDetail updateOrderDetail(@PathVariable("id") int id, @RequestBody OrderDetail orderDetail) {
+    return orderDetailService.update(id, orderDetail);
   }
 
-  @DeleteMapping("/tutorials/{id}")
+  @DeleteMapping("/order_detail/{id}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void deleteTutorial(@PathVariable("id") int id) {
-    tutorialService.deleteById(id);
+  public void deleteOrderDetail(@PathVariable("id") int id) {
+    orderDetailService.deleteById(id);
   }
 
-  @DeleteMapping("/tutorials")
+  @DeleteMapping("/order_detail")
   @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void deleteAllTutorials() {
-     tutorialService.deleteAll();
+  public void deleteAllOrderDetails() {
+    orderDetailService.deleteAll();
   }
+
+
 
   /*@GetMapping("/tutorials/published")
   @ResponseStatus(HttpStatus.OK)

@@ -1,63 +1,71 @@
 package com.bezkoder.spring.r2dbc.h2.model;
 
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name ="PERSONS")
+//exactly the same
 
 public class Tutorial {
-  
+
+
+
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name="PERSONID")
   private int id;
 
-  private String title;
+  @Column(name="LASTNAME")
+  private String lastName;
+  @Column(name="FIRSTNAME")
+  private String firstName;
 
-  private String description;
+  @Column(name="ADDRESS")
+  //@OneToOne(cascade = CascadeType.ALL)
+  //@JoinColumn(name="address_id", referencedColumnName = "id")
+  private String address;
 
-  private boolean published;
+  @Column(name="CITY")
+  private String city;
 
-  public Tutorial() {
 
-  }
-
-  public Tutorial(String title, String description, boolean published) {
-    this.title = title;
-    this.description = description;
-    this.published = published;
+  public int getId() {
+    return id;
   }
 
   public void setId(int id) {
     this.id = id;
   }
-  
-  public long getId() {
-    return id;
+
+  public String getLastName() {
+    return lastName;
   }
 
-  public String getTitle() {
-    return title;
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
-  public void setTitle(String title) {
-    this.title = title;
+  public String getFirstName() {
+    return firstName;
   }
 
-  public String getDescription() {
-    return description;
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
+  public String getAddress() {
+    return address;
   }
 
-  public boolean getPublished() {
-    return published;
+  public void setAddress(String address) {
+    this.address = address;
   }
 
-  public void setPublished(boolean isPublished) {
-    this.published = isPublished;
+  public String getCity() {
+    return city;
   }
 
-  @Override
-  public String toString() {
-    return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
+  public void setCity(String city) {
+    this.city = city;
   }
-
 }

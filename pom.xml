@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bezkoder</groupId>
-	<artifactId>spring-boot-r2dbc-h2-example</artifactId>
+	<artifactId>Dr_pizza</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-r2dbc-h2-example</name>
 	<description>Spring Boot R2DBC and H2 example: CRUD Rest API</description>
@@ -23,22 +23,8 @@
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 
-		<dependency>
-			<groupId>io.r2dbc</groupId>
-			<artifactId>r2dbc-h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,6 +35,30 @@
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<groupId>org.springframework.boot</groupId>
+
+		</dependency>
+		<dependency>
+			<artifactId>snowflake-jdbc</artifactId>
+			<groupId>net.snowflake</groupId>
+			<version>3.14.3</version>
+		</dependency>
+		<dependency>
+			<artifactId>arrow-memory-netty</artifactId>
+			<groupId>org.apache.arrow</groupId>
+			<version>14.0.0</version>
+		</dependency>
+		<dependency>
+			<artifactId>snowflake-common</artifactId>
+			<groupId>net.snowflake</groupId>
+			<version>5.1.4</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<groupId>org.springframework.boot</groupId>
 		</dependency>
 	</dependencies>
 
